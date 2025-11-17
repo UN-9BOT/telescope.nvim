@@ -24,3 +24,6 @@ jobs:
         run: |
           git fetch upstream
           git rebase upstream/master
+      - name: Push rebased master
+        run: |
+          git push origin master --force-with-lease
