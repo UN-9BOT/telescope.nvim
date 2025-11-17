@@ -16,6 +16,10 @@ jobs:
       - name: Configure upstream remote
         run: |
           git remote get-url upstream || git remote add upstream https://github.com/nvim-telescope/telescope.nvim
+      - name: Configure git user
+        run: |
+          git config --global user.name "un_9bot"
+          git config --global user.email "un.9bot@gmail.com"
       - name: Fetch upstream and rebase
         run: |
           git fetch upstream
