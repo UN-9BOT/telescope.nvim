@@ -30,6 +30,10 @@ jobs:
         run: |
           git fetch upstream
           git rebase upstream/master
+      - name: Keep local workflows
+        run: |
+          git checkout origin/master -- .github/workflows
+          git commit -m "Keep local workflows configuration" || echo "No workflow changes"
       - name: Push rebased master
         run: |
           git push origin master --force-with-lease
